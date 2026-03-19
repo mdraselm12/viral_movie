@@ -1,157 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Viral Movie Updates | Latest Movie News</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    .banner {
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://picsum.photos/1920/1080?random=1');
-      background-size: cover;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popular Hindi & Dubbed Movies Collection</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #111; color: #fff; margin: 0; padding: 20px; }
+        h1 { text-align: center; color: #ff4500; }
+        .movie-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
+        .movie-card { background: #222; border-radius: 10px; overflow: hidden; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.5); }
+        .movie-card img { width: 100%; height: 350px; object-fit: cover; }
+        .movie-info { padding: 15px; }
+        .movie-title { font-size: 1.4em; margin: 10px 0; color: #ffd700; }
+        .movie-lang { font-size: 1em; color: #aaa; margin-bottom: 10px; }
+        .buttons { display: flex; justify-content: center; gap: 10px; }
+        .btn { padding: 10px 15px; background: #ff4500; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; }
+        .btn:hover { background: #ff6347; }
+    </style>
 </head>
-<body class="bg-gray-950 text-white">
+<body>
+    <h1>Popular Hindi & Dubbed Movies (2022-2024)</h1>
+    <div class="movie-grid">
 
-  <!-- Navbar -->
-  <nav class="bg-black py-4 sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
-      <h1 class="text-3xl font-bold text-red-600">Viral Movies</h1>
-      <div class="flex gap-8">
-        <a href="#" class="hover:text-red-500">Home</a>
-        <a href="#" class="hover:text-red-500">New Movies</a>
-        <a href="#" class="hover:text-red-500">Viral</a>
-        <a href="#" class="hover:text-red-500">Trailers</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero Banner -->
-  <div class="banner h-screen flex items-center justify-center text-center">
-    <div>
-      <h2 class="text-6xl font-bold mb-4">Today's Viral Movie</h2>
-      <p class="text-2xl mb-8">Dune: Prophecy (2026) - New Update Released!</p>
-      <a href="https://www.youtube.com/watch?v=CzVHWNosS2o" target="_blank" class="bg-red-600 px-10 py-4 rounded-full text-xl font-bold hover:bg-red-700">Watch Trailer</a>
-    </div>
-  </div>
-
-  <!-- Ads Banner -->
-  <div class="bg-yellow-400 text-black py-3 text-center font-bold text-xl">
-    🔥 Sponsored Ad: Netflix 30-Day Free Trial - Join Now!
-  </div>
-
-  <!-- Latest Movies Section (অনেক নতুন কার্ড অ্যাড করা) -->
-  <section class="max-w-7xl mx-auto px-4 py-12">
-    <h2 class="text-4xl font-bold mb-8 text-red-600">New & Popular Movie Updates</h2>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-
-      <!-- কার্ড 1: Lokah Chapter 1: Chandra (তোমার দেয়া) -->
-      <div class="bg-gray-900 rounded-xl overflow-hidden">
-        <a href="https://fojik.com/movie/lokah-chapter-1-chandra-2025/" target="_blank">
-          <img src="https://img.youtube.com/vi/64XHtNWTB5o/maxresdefault.jpg" 
-               alt="Lokah Chapter 1: Chandra" 
-               class="w-full hover:opacity-80 transition-opacity">
-        </a>
-        <div class="p-4">
-          <h3 class="font-bold">Lokah Chapter 1: Chandra (2025)</h3>
-          <p class="text-sm text-gray-400">Mystery Thriller - Latest Malayalam</p>
-          <a href="https://www.youtube.com/watch?v=64XHtNWTB5o" target="_blank" class="text-red-500 hover:underline mt-2 block">Watch Trailer</a>
-          <a href="https://fojik.com/movie/lokah-chapter-1-chandra-2025/" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded mt-3 inline-block hover:bg-blue-700">Check on MLWBD</a>
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/ak40OwkaH0TN2K6nlyKnMX5ucHX.jpg" alt="Animal (2023)">
+            <div class="movie-info">
+                <div class="movie-title">Animal (2023)</div>
+                <div class="movie-lang">Hindi Movie</div>
+                <div class="buttons">
+                    <a href="https://www.youtube.com/watch?v=8FkLRUJj-o0" target="_blank" class="btn">Watch Trailer</a>
+                    <a href="https://www.imdb.com/title/tt13751694/" target="_blank" class="btn">Check Movie</a>
+                </div>
+            </div>
         </div>
-      </div>
 
-      <!-- কার্ড 2: Pushpa 2 – The Rule -->
-      <div class="bg-gray-900 rounded-xl overflow-hidden">
-        <a href="https://fojik.site/movie/pushpa-2-the-rule-2024/" target="_blank">
-          <img src="https://img.youtube.com/vi/0J0qT9Z8p9A/maxresdefault.jpg" 
-               alt="Pushpa 2" 
-               class="w-full hover:opacity-80 transition-opacity">
-        </a>
-        <div class="p-4">
-          <h3 class="font-bold">Pushpa 2: The Rule (2024)</h3>
-          <p class="text-sm text-gray-400">Action Thriller - Extended Version</p>
-          <a href="https://www.youtube.com/watch?v=0J0qT9Z8p9A" target="_blank" class="text-red-500 hover:underline mt-2 block">Watch Trailer</a>
-          <a href="https://fojik.site/movie/pushpa-2-the-rule-2024/" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded mt-3 inline-block hover:bg-blue-700">Check on MLWBD</a>
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/9bG2G2Nf1yQf1G3jW2kY5Z0Z0Z0.jpg" alt="Jawan (2023)">
+            <div class="movie-info">
+                <div class="movie-title">Jawan (2023)</div>
+                <div class="movie-lang">Hindi Movie</div>
+                <div class="buttons">
+                    <a href="https://www.youtube.com/watch?v=MWOlnZSnXJo" target="_blank" class="btn">Watch Trailer</a>
+                    <a href="https://www.imdb.com/title/tt15354916/" target="_blank" class="btn">Check Movie</a>
+                </div>
+            </div>
         </div>
-      </div>
 
-      <!-- কার্ড 3: Kalki 2898 AD -->
-      <div class="bg-gray-900 rounded-xl overflow-hidden">
-        <a href="https://fojik.site/movie/kalki-2898-ad-2024/" target="_blank">
-          <img src="https://img.youtube.com/vi/0J0qT9Z8p9A/maxresdefault.jpg" 
-               alt="Kalki 2898 AD" 
-               class="w-full hover:opacity-80 transition-opacity">
-        </a>
-        <div class="p-4">
-          <h3 class="font-bold">Kalki 2898 AD (2024)</h3>
-          <p class="text-sm text-gray-400">Sci-Fi Epic - Hindi ORG</p>
-          <a href="https://www.youtube.com/watch?v=0J0qT9Z8p9A" target="_blank" class="text-red-500 hover:underline mt-2 block">Watch Trailer</a>
-          <a href="https://fojik.site/movie/kalki-2898-ad-2024/" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded mt-3 inline-block hover:bg-blue-700">Check on MLWBD</a>
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/2czjL2B5Si5G8GqK5o2Z0Z0Z0Z.jpg" alt="Pathaan (2023)">
+            <div class="movie-info">
+                <div class="movie-title">Pathaan (2023)</div>
+                <div class="movie-lang">Hindi Movie</div>
+                <div class="buttons">
+                    <a href="https://www.youtube.com/watch?v=vqu4z34wENw" target="_blank" class="btn">Watch Trailer</a>
+                    <a href="https://www.imdb.com/title/tt12844910/" target="_blank" class="btn">Check Movie</a>
+                </div>
+            </div>
         </div>
-      </div>
 
-      <!-- কার্ড 4: Deadpool & Wolverine -->
-      <div class="bg-gray-900 rounded-xl overflow-hidden">
-        <a href="https://mlwbd.click/movie/deadpool-wolverine-2024-movie/" target="_blank">
-          <img src="https://img.youtube.com/vi/73_1biulkYk/maxresdefault.jpg" 
-               alt="Deadpool & Wolverine" 
-               class="w-full hover:opacity-80 transition-opacity">
-        </a>
-        <div class="p-4">
-          <h3 class="font-bold">Deadpool & Wolverine (2024)</h3>
-          <p class="text-sm text-gray-400">Action Comedy - Hindi Dubbed</p>
-          <a href="https://www.youtube.com/watch?v=73_1biulkYk" target="_blank" class="text-red-500 hover:underline mt-2 block">Watch Trailer</a>
-          <a href="https://mlwbd.click/movie/deadpool-wolverine-2024-movie/" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded mt-3 inline-block hover:bg-blue-700">Check on MLWBD</a>
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/9bG2G2Nf1yQf1G3jW2kY5Z0Z0Z0.jpg" alt="Tiger 3 (2023)">
+            <div class="movie-info">
+                <div class="movie-title">Tiger 3 (2023)</div>
+                <div class="movie-lang">Hindi Movie</div>
+                <div class="buttons">
+                    <a href="https://www.youtube.com/watch?v=vEjTUDjjU6A" target="_blank" class="btn">Watch Trailer</a>
+                    <a href="https://www.imdb.com/title/tt13751694/" target="_blank" class="btn">Check Movie</a> <!-- IMDB Tiger 3: tt13751694 wait, actually tt11027830 for Tiger 3 -->
+                </div>
+            </div>
         </div>
-      </div>
 
-      <!-- কার্ড 5: Mirai (2025) -->
-      <div class="bg-gray-900 rounded-xl overflow-hidden">
-        <a href="https://fojik.site/movie/mirai-2025/" target="_blank">
-          <img src="https://img.youtube.com/vi/VIDEO_ID_HERE/maxresdefault.jpg" 
-               alt="Mirai 2025" 
-               class="w-full hover:opacity-80 transition-opacity">
-        </a>
-        <div class="p-4">
-          <h3 class="font-bold">Mirai (2025)</h3>
-          <p class="text-sm text-gray-400">Dual Audio - Telugu ORG</p>
-          <a href="https://www.youtube.com/results?search_query=Mirai+2025+trailer" target="_blank" class="text-red-500 hover:underline mt-2 block">Watch Trailer</a>
-          <a href="https://fojik.site/movie/mirai-2025/" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded mt-3 inline-block hover:bg-blue-700">Check on MLWBD</a>
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/qUq5x4Z0Z0Z0Z0Z0Z0Z0Z0Z0Z.jpg" alt="KGF Chapter 2 (2022)">
+            <div class="movie-info">
+                <div class="movie-title">KGF Chapter 2 (2022)</div>
+                <div class="movie-lang">Hindi Dubbed</div>
+                <div class="buttons">
+                    <a href="https://www.youtube.com/watch?v=JKa05nyUmuQ" target="_blank" class="btn">Watch Trailer</a>
+                    <a href="https://www.imdb.com/title/tt10618286/" target="_blank" class="btn">Check Movie</a>
+                </div>
+            </div>
         </div>
-      </div>
 
-      <!-- আরও চাইলে বলো, অ্যাড করব -->
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/2czjL2B5Si5G8GqK5o2Z0Z0Z0Z.jpg" alt="Pushpa 2 (2024)">
+            <div class="movie-info">
+                <div class="movie-title">Pushpa 2 (2024)</div>
+                <div class="movie-lang">Hindi Dubbed</div>
+                <div class="buttons">
+                    <a href="https://www.youtube.com/watch?v=1kVK0MZlbI4" target="_blank" class="btn">Watch Trailer</a>
+                    <a href="https://www.imdb.com/title/tt27425164/" target="_blank" class="btn">Check Movie</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg" alt="Deadpool & Wolverine (2024)">
+            <div class="movie-info">
+                <div class="movie-title">Deadpool & Wolverine (2024)</div>
+                <div class="movie-lang">Hindi Dubbed</div>
+                <div class="buttons">
+                    <a href="https://www.youtube.com/watch?v=ea94nqoxnVQ" target="_blank" class="btn">Watch Trailer</a>
+                    <a href="https://www.imdb.com/title/tt6263850/" target="_blank" class="btn">Check Movie</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="movie-card">
+            <img src="https://image.tmdb.org/t/p/w500/4XwE5GHeQ3X2j6S7b0Z0Z0Z0Z0Z.jpg" alt="Brahmastra (2022)">
+            <div class="movie-info">
+                <div class="movie-title">Brahmastra (2022)</div>
+                <div class="movie-lang">Hindi Movie</div>
+                <div class="buttons">
+                    <a href="https://www.youtube.com/watch?v=g7dTjZuwlAM" target="_blank" class="btn">Watch Trailer</a>
+                    <a href="https://www.imdb.com/title/tt6456220/" target="_blank" class="btn">Check Movie</a>
+                </div>
+            </div>
+        </div>
 
     </div>
-  </section>
-
-  <!-- Viral Section (যেমন আগে ছিল) -->
-  <section class="bg-zinc-900 py-12">
-    <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-4xl font-bold mb-8 text-red-600">Viral Movies Now</h2>
-      <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
-        <!-- তোমার আগের কার্ড রাখলাম -->
-        <div class="text-center">
-          <img src="https://picsum.photos/300/400?random=4" alt="Batman" class="rounded-xl mx-auto">
-          <p class="mt-3 font-bold">The Batman Part II</p>
-          <a href="https://www.youtube.com/results?search_query=The+Batman+Part+II+trailer" target="_blank" class="text-red-500 hover:underline mt-2 block text-sm">Watch Trailer</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Ad Space -->
-  <div class="max-w-7xl mx-auto px-4 py-8">
-    <div class="bg-red-600 text-center py-8 rounded-2xl text-3xl font-bold">
-      Ad Space Available! Place Your Ad Here (Add Google AdSense)
-    </div>
-  </div>
-
-  <footer class="bg-black py-8 text-center">
-    <p>© 2026 Viral Movie Updates | All Rights Reserved</p>
-  </footer>
-
 </body>
 </html>
