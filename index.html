@@ -1,123 +1,211 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Popular Hindi & Dubbed Movies Collection</title>
-    <style>
-        body { font-family: Arial, sans-serif; background: #111; color: #fff; margin: 0; padding: 20px; }
-        h1 { text-align: center; color: #ff4500; }
-        .movie-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
-        .movie-card { background: #222; border-radius: 10px; overflow: hidden; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.5); }
-        .movie-card img { width: 100%; height: 350px; object-fit: cover; }
-        .movie-info { padding: 15px; }
-        .movie-title { font-size: 1.4em; margin: 10px 0; color: #ffd700; }
-        .movie-lang { font-size: 1em; color: #aaa; margin-bottom: 10px; }
-        .buttons { display: flex; justify-content: center; gap: 10px; }
-        .btn { padding: 10px 15px; background: #ff4500; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; }
-        .btn:hover { background: #ff6347; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movie Zone Pro</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body { margin:0; font-family: Arial; background:#0d0d0d; color:white; }
+
+h1 { text-align:center; color:#ff4500; }
+
+/* TOP BAR */
+.top-bar {
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    padding:15px;
+}
+
+input, select {
+    padding:8px;
+    border-radius:5px;
+    border:none;
+}
+
+/* GRID */
+.movie-grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    padding:20px;
+}
+
+/* CARD */
+.movie-card {
+    background:#1a1a1a;
+    border-radius:10px;
+    overflow:hidden;
+    transition:0.3s;
+}
+.movie-card:hover { transform:translateY(-5px); }
+
+.movie-card img {
+    width:100%;
+    height:320px;
+    object-fit:cover;
+}
+
+.movie-info { padding:10px; text-align:center; }
+
+.btn {
+    background:#ff4500;
+    padding:8px 10px;
+    border-radius:5px;
+    text-decoration:none;
+    color:white;
+    display:inline-block;
+    margin:5px;
+}
+
+/* PLAYER */
+#playerPage { display:none; padding:20px; }
+
+video {
+    width:100%;
+    max-width:800px;
+    display:block;
+    margin:auto;
+}
+
+/* FOOTER */
+footer { text-align:center; padding:20px; }
+
+.social a {
+    color:white;
+    margin:10px;
+    font-size:22px;
+}
+</style>
 </head>
+
 <body>
-    <h1>Popular Hindi & Dubbed Movies (2022-2024)</h1>
-    <div class="movie-grid">
 
-        <div class="movie-card">
-            <img src="https://image.tmdb.org/t/p/w500/ak40OwkaH0TN2K6nlyKnMX5ucHX.jpg" alt="Animal (2023)">
-            <div class="movie-info">
-                <div class="movie-title">Animal (2023)</div>
-                <div class="movie-lang">Hindi Movie</div>
-                <div class="buttons">
-                    <a href="https://www.youtube.com/watch?v=8FkLRUJj-o0" target="_blank" class="btn">Watch Trailer</a>
-                    <a href="https://www.imdb.com/title/tt13751694/" target="_blank" class="btn">Check Movie</a>
-                </div>
-            </div>
-        </div>
+<h1>🔥 Movie Zone Pro</h1>
 
-        <div class="movie-card">
-            <img src="https://image.tmdb.org/t/p/w500/9bG2G2Nf1yQf1G3jW2kY5Z0Z0Z0.jpg" alt="Jawan (2023)">
-            <div class="movie-info">
-                <div class="movie-title">Jawan (2023)</div>
-                <div class="movie-lang">Hindi Movie</div>
-                <div class="buttons">
-                    <a href="https://www.youtube.com/watch?v=MWOlnZSnXJo" target="_blank" class="btn">Watch Trailer</a>
-                    <a href="https://www.imdb.com/title/tt15354916/" target="_blank" class="btn">Check Movie</a>
-                </div>
-            </div>
-        </div>
+<!-- SEARCH + FILTER -->
+<div class="top-bar">
+<input type="text" id="search" placeholder="Search movie...">
+<select id="filter">
+<option value="all">All</option>
+<option value="Hindi">Hindi</option>
+<option value="Dubbed">Dubbed</option>
+</select>
+</div>
 
-        <div class="movie-card">
-            <img src="https://image.tmdb.org/t/p/w500/2czjL2B5Si5G8GqK5o2Z0Z0Z0Z.jpg" alt="Pathaan (2023)">
-            <div class="movie-info">
-                <div class="movie-title">Pathaan (2023)</div>
-                <div class="movie-lang">Hindi Movie</div>
-                <div class="buttons">
-                    <a href="https://www.youtube.com/watch?v=vqu4z34wENw" target="_blank" class="btn">Watch Trailer</a>
-                    <a href="https://www.imdb.com/title/tt12844910/" target="_blank" class="btn">Check Movie</a>
-                </div>
-            </div>
-        </div>
+<!-- HOME -->
+<div id="homePage">
+<div class="movie-grid" id="movieGrid"></div>
+</div>
 
-        <div class="movie-card">
-            <img src="https://image.tmdb.org/t/p/w500/9bG2G2Nf1yQf1G3jW2kY5Z0Z0Z0.jpg" alt="Tiger 3 (2023)">
-            <div class="movie-info">
-                <div class="movie-title">Tiger 3 (2023)</div>
-                <div class="movie-lang">Hindi Movie</div>
-                <div class="buttons">
-                    <a href="https://www.youtube.com/watch?v=vEjTUDjjU6A" target="_blank" class="btn">Watch Trailer</a>
-                    <a href="https://www.imdb.com/title/tt13751694/" target="_blank" class="btn">Check Movie</a> <!-- IMDB Tiger 3: tt13751694 wait, actually tt11027830 for Tiger 3 -->
-                </div>
-            </div>
-        </div>
+<!-- PLAYER -->
+<div id="playerPage">
+<h1>🎬 Now Playing</h1>
+<video id="videoPlayer" controls></video>
+<br>
+<button class="btn" onclick="goHome()">⬅ Back</button>
+</div>
 
-        <div class="movie-card">
-            <img src="https://image.tmdb.org/t/p/w500/qUq5x4Z0Z0Z0Z0Z0Z0Z0Z0Z0Z.jpg" alt="KGF Chapter 2 (2022)">
-            <div class="movie-info">
-                <div class="movie-title">KGF Chapter 2 (2022)</div>
-                <div class="movie-lang">Hindi Dubbed</div>
-                <div class="buttons">
-                    <a href="https://www.youtube.com/watch?v=JKa05nyUmuQ" target="_blank" class="btn">Watch Trailer</a>
-                    <a href="https://www.imdb.com/title/tt10618286/" target="_blank" class="btn">Check Movie</a>
-                </div>
-            </div>
-        </div>
+<!-- FOOTER -->
+<footer>
+<div class="social">
+<a href="#"><i class="fab fa-facebook"></i></a>
+<a href="#"><i class="fab fa-youtube"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+</div>
+<p>© 2026 Movie Zone</p>
+</footer>
 
-        <div class="movie-card">
-            <img src="https://image.tmdb.org/t/p/w500/2czjL2B5Si5G8GqK5o2Z0Z0Z0Z.jpg" alt="Pushpa 2 (2024)">
-            <div class="movie-info">
-                <div class="movie-title">Pushpa 2 (2024)</div>
-                <div class="movie-lang">Hindi Dubbed</div>
-                <div class="buttons">
-                    <a href="https://www.youtube.com/watch?v=1kVK0MZlbI4" target="_blank" class="btn">Watch Trailer</a>
-                    <a href="https://www.imdb.com/title/tt27425164/" target="_blank" class="btn">Check Movie</a>
-                </div>
-            </div>
-        </div>
+<script>
 
-        <div class="movie-card">
-            <img src="https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg" alt="Deadpool & Wolverine (2024)">
-            <div class="movie-info">
-                <div class="movie-title">Deadpool & Wolverine (2024)</div>
-                <div class="movie-lang">Hindi Dubbed</div>
-                <div class="buttons">
-                    <a href="https://www.youtube.com/watch?v=ea94nqoxnVQ" target="_blank" class="btn">Watch Trailer</a>
-                    <a href="https://www.imdb.com/title/tt6263850/" target="_blank" class="btn">Check Movie</a>
-                </div>
-            </div>
-        </div>
+// 🎬 MOVIE DATABASE (JSON STYLE)
+const movies = [
+{
+title:"Animal",
+year:"2023",
+type:"Hindi",
+img:"https://image.tmdb.org/t/p/w500/ak40OwkaH0TN2K6nlyKnMX5ucHX.jpg",
+video:"sample.mp4",
+download:"https://mlwbd.example/animal"
+},
+{
+title:"Jawan",
+year:"2023",
+type:"Hindi",
+img:"https://image.tmdb.org/t/p/w500/9bG2G2Nf1yQf1G3jW2kY5Z0Z0Z0.jpg",
+video:"sample.mp4",
+download:"https://mlwbd.example/jawan"
+},
+{
+title:"KGF Chapter 2",
+year:"2022",
+type:"Dubbed",
+img:"https://image.tmdb.org/t/p/w500/qUq5x4Z0Z0Z0Z0Z0Z0Z0Z0Z0Z.jpg",
+video:"sample.mp4",
+download:"https://mlwbd.example/kgf2"
+}
+];
 
-        <div class="movie-card">
-            <img src="https://image.tmdb.org/t/p/w500/4XwE5GHeQ3X2j6S7b0Z0Z0Z0Z0Z.jpg" alt="Brahmastra (2022)">
-            <div class="movie-info">
-                <div class="movie-title">Brahmastra (2022)</div>
-                <div class="movie-lang">Hindi Movie</div>
-                <div class="buttons">
-                    <a href="https://www.youtube.com/watch?v=g7dTjZuwlAM" target="_blank" class="btn">Watch Trailer</a>
-                    <a href="https://www.imdb.com/title/tt6456220/" target="_blank" class="btn">Check Movie</a>
-                </div>
-            </div>
-        </div>
+// LOAD MOVIES
+function loadMovies(list){
+let grid = document.getElementById("movieGrid");
+grid.innerHTML = "";
 
-    </div>
+list.forEach(movie=>{
+grid.innerHTML += `
+<div class="movie-card">
+<img src="${movie.img}">
+<div class="movie-info">
+<h3>${movie.title} (${movie.year})</h3>
+<p>${movie.type}</p>
+
+<a href="#" class="btn" onclick="playMovie('${movie.video}')">▶ Watch</a>
+<a href="${movie.download}" target="_blank" class="btn">⬇ Download</a>
+
+</div>
+</div>
+`;
+});
+}
+
+// PLAY
+function playMovie(src){
+document.getElementById("homePage").style.display="none";
+document.getElementById("playerPage").style.display="block";
+document.getElementById("videoPlayer").src = src;
+}
+
+// BACK
+function goHome(){
+document.getElementById("homePage").style.display="block";
+document.getElementById("playerPage").style.display="none";
+}
+
+// SEARCH + FILTER
+document.getElementById("search").addEventListener("input", filterMovies);
+document.getElementById("filter").addEventListener("change", filterMovies);
+
+function filterMovies(){
+let search = document.getElementById("search").value.toLowerCase();
+let filter = document.getElementById("filter").value;
+
+let filtered = movies.filter(m=>{
+return (
+m.title.toLowerCase().includes(search) &&
+(filter === "all" || m.type === filter)
+);
+});
+
+loadMovies(filtered);
+}
+
+// INIT
+loadMovies(movies);
+
+</script>
+
 </body>
 </html>
